@@ -44,7 +44,7 @@ export default class ContactList extends React.Component {
 
         return (
             <div className="row container">
-                <div className="col s4">
+                <div className="col s12 m4">
                     <form onSubmit={this.addContacts.bind(this)}>
                         <label>Name</label>
                         <input ref="name"/>
@@ -58,7 +58,7 @@ export default class ContactList extends React.Component {
 
                 </div>
 
-                <div className="col s8">
+                <div className="col s12 m8">
                     <table className="striped">
                         <thead>
                             <tr>
