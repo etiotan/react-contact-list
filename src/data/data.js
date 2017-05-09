@@ -23,3 +23,5 @@ const contactData = [
         "phone_number": "96.39.93.112"
     }
 ]
+
+export { contactData }

@@ -21,7 +21,7 @@ addContacts(event){
 
         return(
 
-        <div className="row">
+
             <div className="col s4">
             <form>
 
@@ -39,7 +39,6 @@ addContacts(event){
 
         </div>
 
-        </div>
 
 
 
