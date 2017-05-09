@@ -25,8 +25,8 @@ export default class ContactList extends React.Component {
         }
 
         //clears inputs after submit
-        contactData.push(o)
-        this.setState({contacts: contactData})
+        this.state.contacts.push(o)
+        this.setState({contacts: this.state.contacts})
         this.refs.name.value = "";
         this.refs.phone.value = "";
         this.refs.email.value = "";
