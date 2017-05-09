@@ -1,13 +1,6 @@
 import React from 'react'
 import {contactData} from '../data/data.js'
 
-//Mapped List for contacts
-let list = contactData.map((data, index) => {
-    return <li key={index}>Name: {data.name}
-        Email: {data.email}
-        Phone: {data.phone_number}</li>
-})
-
 export default class ContactList extends React.Component {
 
     constructor(props) {
@@ -39,6 +32,8 @@ export default class ContactList extends React.Component {
         this.refs.email.value = "";
     }
 
+
+
     render() {
 
         console.log(this.state.contacts)
@@ -46,34 +41,38 @@ export default class ContactList extends React.Component {
         return (
             <div className="row container">
                 <div className="col s4">
-                    <form>
-                        <input ref="name"/>
+                    <form onSubmit={this.addContacts.bind(this)}>
                         <label>Name</label>
-                        <input ref="phone"/>
+                        <input ref="name"/>
                         <label>Phone</label>
-                        <input ref="email"/>
+                        <input ref="phone"/>
                         <label>Email</label>
-                    </form>
+                        <input ref="email"/>
 
-                    <button onClick={this.addContacts.bind(this)} className="btn cyan lighten-3" type="submit" name="action">Submit</button>
+                        <button className="btn cyan lighten-3" type="submit" name="action">Submit</button>
+                    </form>
 
                 </div>
 
                 <div className="col s8">
                     <table className="striped">
                         <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Email</th>
-                            <th>Phone</th>
-                        </tr>
-                    </thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Phone</th>
+                                <th></th>
+                            </tr>
+                        </thead>
                         <tbody>
                             {this.state.contacts.map((data, index) => {
                                 return <tr key={index}>
                                     <td>{data.name}</td>
                                     <td>{data.email}</td>
                                     <td>{data.phone_number}</td>
+                                    <td>
+                                        <button className="btn red">del</button>
+                                    </td>
                                 </tr>
                             })}
                         </tbody>
