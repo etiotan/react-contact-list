@@ -38,7 +38,7 @@ export default class InputList extends React.Component {
         this.refs.email.value = ""
 
     }
-    // spread operator to pass entire object
+
     deleteContacts(index) {
         var contacts = this.state.contacts;
         contacts.splice(index, 1);
