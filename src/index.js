@@ -1,7 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './styles.css';
-import ContactList from './Components/ContactList'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import './styles.css'
+import InputList from './Components/InputList'
 
 class App extends React.Component {
 
@@ -9,11 +9,11 @@ class App extends React.Component {
         return (
             <div>
 
-                <h1 className="center-align blue-text">
+                <h1 className="center-align">
                     Contact List
                 </h1>
 
-                <ContactList/>
+                <InputList/>
 
             </div>
         );
@@ -21,4 +21,4 @@ class App extends React.Component {
 }
 
 ReactDOM.render(
-    <App/>, document.getElementById('root'));
+    <App/>, document.getElementById('root'))
