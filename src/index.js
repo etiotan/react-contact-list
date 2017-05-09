@@ -1,12 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import './styles.css';
-
 import ContactList from './Components/ContactList'
 
 class App extends React.Component {
-
 
     render() {
         return (
@@ -23,8 +20,5 @@ class App extends React.Component {
     }
 }
 
-
 ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
+    <App/>, document.getElementById('root'));

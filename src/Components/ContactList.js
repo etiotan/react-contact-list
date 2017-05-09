@@ -32,7 +32,11 @@ export default class ContactList extends React.Component {
         this.refs.email.value = "";
     }
 
-
+    deleteContacts(index) {
+        var contacts = [...this.state.contacts];
+        contacts.splice(index, 1);
+        this.setState({contacts});
+      }
 
     render() {
 
@@ -71,7 +75,7 @@ export default class ContactList extends React.Component {
                                     <td>{data.email}</td>
                                     <td>{data.phone_number}</td>
                                     <td>
-                                        <button className="btn red">del</button>
+                                        <button onClick={this.deleteContacts.bind(this)} className="btn red">del</button>
                                     </td>
                                 </tr>
                             })}
