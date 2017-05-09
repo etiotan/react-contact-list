@@ -22,7 +22,7 @@ render(){
                             <td>{data.email}</td>
                             <td>{data.phone_number}</td>
                             <td>
-                                <button onClick={this.props.deleteContacts} className="btn red">del</button>
+                                <button onClick={this.props.deleteContacts.bind(this, index)} className="btn red">del</button>
                             </td>
                         </tr>
                     })}
