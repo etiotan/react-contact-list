@@ -17,19 +17,28 @@ export default class ContactList extends React.Component {
             email = this.refs.email.value.trim();
         console.log(name, phone, email);
 
+
         //create new object
         var o = {
             name: name,
             email: email,
             phone_number: phone
         }
+        //catch irregularities, they must enter name
+        if (name){
+            this.state.contacts.push(o)
+            this.setState({contacts: this.state.contacts})
+            }
+        else{
+            alert('Please Enter a Name')
+        }
+
 
         //clears inputs after submit
-        this.state.contacts.push(o)
-        this.setState({contacts: this.state.contacts})
         this.refs.name.value = "";
         this.refs.phone.value = "";
         this.refs.email.value = "";
+
     }
 
     deleteContacts(index) {
@@ -38,13 +47,27 @@ export default class ContactList extends React.Component {
         this.setState({contacts});
       }
 
+    sortContacts(){
+    this.state.contacts.sort(function(a, b) {
+    var textA = a.name.toUpperCase();
+    var textB = b.name.toUpperCase();
+    return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+});
+    this.setState(this.state.contacts)
+    }
+
+
+
+
     render() {
 
         console.log(this.state.contacts)
 
         return (
             <div className="row container">
+
                 <div className="col s12 m4">
+                    <br></br>
                     <form onSubmit={this.addContacts.bind(this)}>
                         <label>Name</label>
                         <input ref="name"/>
@@ -62,7 +85,7 @@ export default class ContactList extends React.Component {
                     <table className="striped">
                         <thead>
                             <tr>
-                                <th>Name</th>
+                                <th className="sorter" onClick={this.sortContacts.bind(this)}>Name</th>
                                 <th>Email</th>
                                 <th>Phone</th>
                                 <th></th>
@@ -79,10 +102,12 @@ export default class ContactList extends React.Component {
                                     </td>
                                 </tr>
                             })}
+
                         </tbody>
                     </table>
 
                 </div>
+
             </div>
         )
 
