@@ -2,6 +2,8 @@
 
 A simple Contact-list made with React and styled with materialize-css. Made for tilr developer test.
 
+[Live Site](https://etiotan.github.io/react-contact-list/)
+
 ### Tools
 
 - create-react-app
@@ -15,7 +17,7 @@ A simple Contact-list made with React and styled with materialize-css. Made for 
 - sort names alphabetically
 - validation check, must enter name or alert prompt
 - responsive
-- deployed via create-react-app
+- deployed via create-react-app onto [gh-pages](https://etiotan.github.io/react-contact-list/)
 
 ### Things that were done well
 
