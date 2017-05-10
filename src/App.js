@@ -1,5 +1,4 @@
 import React from 'react'
-import './styles.css'
 import InputList from './Components/InputList'
 import ContactList from './Components/ContactList'
 import {contactData} from './data/data.js'
